@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+.hero-image-overlap {
+  position: relative;
+}
+
+.hero-image-overlap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+  z-index: 1;
+}
+
+.product-card-hover {
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-card-hover:hover {
+  transform: translateY(-10px);
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+}
+
+.writing-mode-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.diagonal-line {
+  position: relative;
+}
+
+.diagonal-line::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  width: 40px;
+  height: 1px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+
+/* Animation delays for blobs */
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Fix for size dropdown */
+.aspect-w-1 {
+  position: relative;
+  padding-bottom: 100%;
+}
+
+.aspect-w-1 > img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
+}
+
+/* Ensure dropdowns are visible */
+.group:hover .absolute.bottom-0 {
+  z-index: 20;
+}
+
+/* Neon effect for product cards */
+.neon-frame {
+  position: relative;
+}
+
+.neon-frame::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(90deg, #ff00cc, #3333ff);
+  z-index: -1;
+  border-radius: 4px;
+  filter: blur(4px);
+  opacity: 0.7;
+}
+
+.neon-glow {
+  box-shadow: 0 0 15px rgba(255, 0, 204, 0.5), 0 0 30px rgba(51, 51, 255, 0.3);
+}
+
+/* Size button hover effect */
+button.border-gray-700:hover {
+  border-color: #f9f9f9;
+  color: white;
+}
